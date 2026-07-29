@@ -1,52 +1,11 @@
-# Micro Radar QEX — Instalador
+# Micro Radar QEX — mudou de endereco
 
-Rastreador de voos em tempo real para a placa **ESP32 CYD**, nas duas telas:
-**2.8"** (ESP32-2432S028R) e **3.5"** (ESP32-3248S035R, variante R de toque
-resistivo). É o mesmo firmware para as duas — não há versão separada nem nada a
-escolher, a placa é reconhecida sozinha quando liga.
+Este repositorio **nao recebe mais versoes**. O instalador e o firmware passaram a viver na
+organizacao **qex-ham**:
 
-Este repositório contém apenas o **firmware compilado e o instalador** — não é
-preciso VSCode, PlatformIO nem Python para gravar a placa.
+👉 **https://qex-ham.github.io/radar-qex-install/**
 
-<p align="center">
-  <img src="tela-verde.jpg" alt="Radar no tema verde" width="300">
-  &nbsp;&nbsp;
-  <img src="tela-vermelha.jpg" alt="Radar no tema vermelho" width="300">
-</p>
-
-## Instalar pelo navegador (recomendado)
-
-👉 **https://rodrigoux.github.io/radar-qex-install/**
-
-Abra no **Chrome** ou no **Edge**, conecte a placa no USB e clique em
-*Conectar e Instalar*. A gravação acontece direto pelo navegador, via Web Serial.
-
-> Firefox e Safari não suportam Web Serial. Nesses casos, use o instalador offline.
-
-## Instalar sem navegador (Windows)
-
-Baixe o [instalador offline](micro_radar_qex_v1.20_instalador.zip), extraia e execute `gravar.bat`.
-Funciona sem internet.
-
-## Depois de gravar
-
-1. Calibre o toque tocando nos cantos indicados na tela.
-2. Conecte-se à rede Wi-Fi **MicroRadar-Setup** que a placa cria.
-3. Escolha a sua rede Wi-Fi na tela que abrir. A placa reinicia.
-4. Abra o IP mostrado na tela para configurar posição do radar, fonte dos dados
-   (OpenSky, adsb.lol ou airplanes.live), clima, cor da tela e mais.
-
-## Conteúdo
-
-| Arquivo | O que é |
-|---|---|
-| `bootloader.bin`, `partitions.bin`, `boot_app0.bin`, `firmware.bin` | As quatro partes do firmware, cada uma gravada no seu endereço (a NVS do usuário fica intacta) |
-| `manifest.json` | Manifesto do ESP Web Tools |
-| `index.html` | Página do instalador web |
-| `micro_radar_qex_v1.20_instalador.zip` | Instalador offline com `esptool.exe` e `gravar.bat` |
-
-Atualizar **não apaga** suas configurações: Wi-Fi, calibração e chaves de API
-ficam na NVS e são preservados. (Pela página, deixe a caixa *"Erase device"*
-desmarcada.)
-
-*Firmware v1.20. O código-fonte é mantido em um repositório privado.*
+Ele continua no ar porque as placas gravadas ate a **v1.20** consultam este endereco para saber
+se ha versao nova — ele esta compilado dentro do firmware delas. Elas ficarao paradas na v1.20
+achando que estao atualizadas; instale uma vez pelo endereco acima e a placa volta a se atualizar
+sozinha.
